@@ -1,10 +1,12 @@
-//your variable declarations here
+Spaceship Jome = new Spaceship();
 public void setup() 
 {
-  //your code here
+  //size(1000,1000);
+  background(0); 
+  frameRate(60); 
 }
 public void draw() 
 {
-  //your code here
+  Jome.show();
+  Jome.move();
 }
-
