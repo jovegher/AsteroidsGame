@@ -6,26 +6,27 @@ class Spaceship extends Floater {
     xCorners[0] = -10;
     yCorners[0] = -12;
 
-    xCorners[1] = -10;
-    yCorners[1] = 12;
+    xCorners[1] = -12;
+    yCorners[1] = 10;
 
-    xCorners[2] = 18;
-    yCorners[2] = 0;
+    xCorners[2] = -10;
+    yCorners[2] = 12;
 
-    xCorners[3] = -12;
-    yCorners[3] = 10;
+    xCorners[3] = 20;
+    yCorners[3] = 0;
 
     xCorners[4] = 12;
     yCorners[4] = -10;
 
-    myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+    myColor = color((int)(Math.random()*200), (int)(Math.random()*200), (int)(Math.random()*200));
 
-    myCenterX = 0;
-    myCenterY = 0;
-
+    myCenterX = 250;
+    myCenterY = 250;
+    
     myXspeed = 0;
-     myYspeed = 0;
-     myPointDirection = 0;
+    myYspeed = 0;
+    
+    myPointDirection = 0;
   }
   public void setXspeed(double x) {
     myXspeed = x;
@@ -33,24 +34,4 @@ class Spaceship extends Floater {
   public void setYspeed(double y) {
     myYspeed = y;
   }
-  //public void getCenterX(double myCenterX) {
-    //return myCenterX;
-  //}
-  //public void getCenterY(double myCenterY) {
-    //return myCenterY;
-  //}
-  
-  public void move() {
-    if (keyPressed && key == 'w') {
-      setYspeed(2);
-    } else if (keyPressed && key == 's') {
-        setYspeed(-2);
-      }
-    }
-    
-    public void show() {
-      fill(myColor);
-      stroke(myColor);
-      translate((float)myCenterX, (float)myCenterY);
-    }
-  }
+}
