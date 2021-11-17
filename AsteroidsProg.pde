@@ -10,6 +10,18 @@ public void setup() {
   }
   Jome = new Spaceship();
 }
+
+public void keyPressed()
+{
+  if (keyPressed == 'a') {
+    Jome.turn(-10);
+  } else if (keyPressed == 'd') {
+    Jome.turn(10); 
+  } else if (keyPressed == 'w') {
+    Jome.accelerate(5); 
+  } else if (keyPressed == 'w') {
+    Jome.accelerate(-5);
+  } 
 public void draw() 
 {
   background(0);
