@@ -22,16 +22,29 @@ class Spaceship extends Floater {
 
     myCenterX = 250;
     myCenterY = 250;
-    
+
     myXspeed = 0;
     myYspeed = 0;
-    
+
     myPointDirection = 0;
+  }
+  public void hyperspace()
+  {
+    Jome.setXspeed(0);
+    Jome.setYspeed(0);
+    Jome.setCenterX((int)(Math.random()*400));
+    Jome.setCenterY((int)(Math.random()*400));
   }
   public void setXspeed(double x) {
     myXspeed = x;
   }
   public void setYspeed(double y) {
     myYspeed = y;
+  }
+  public void setCenterX(double xx) {
+    myCenterX = xx;
+  }
+  public void setCenterY(double yy) {
+    myCenterY = yy;
   }
 }
