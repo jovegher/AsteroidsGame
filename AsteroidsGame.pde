@@ -1,4 +1,5 @@
 Spaceship Jome;
+Asteroid Ama;
 Star[] sky = new Star[250];
 public void setup() {
   size(500, 500);
@@ -9,16 +10,9 @@ public void setup() {
     sky[i] = new Star();
   }
   Jome = new Spaceship();
+  Ama = new Asteroid();
 }
-/*class Asteroid extends Floater
- {
- double rotSpeed;
- Asteroid() {
- corners = 6;
- xCorners = new int[] {-11, 6, 11, 7, -12, -4};
- yCorners = new int[] {-7, -8, 0, 11, 7, 0};
- }
- */
+
 public void draw() 
 {
   background(0);
@@ -28,6 +22,8 @@ public void draw()
   }
   Jome.move();
   Jome.show();
+  Ama.move();
+  Ama.show();
 }
 
 public void keyPressed()
