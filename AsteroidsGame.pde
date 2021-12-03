@@ -1,17 +1,17 @@
 Spaceship Jome;
-Asteroid[] Ama;
+ArrayList <Asteroid> Ama;
 Star[] sky = new Star[250];
 public void setup() {
   size(500, 500);
   background(0); 
   frameRate(60);
-  Ama = new Asteroid[25];
+  Ama = new ArrayList <Asteroid>();
   for (int i = 0; i < sky.length; i++)
   {
     sky[i] = new Star();
   }
-  for (int n = 0; n < Ama.length; n++) {
-  Ama[n] = new Asteroid();
+  for (int n = 0; n < 25; n++) {
+    Ama.add(new Asteroid());
   }
   Jome = new Spaceship();
 }
@@ -19,14 +19,19 @@ public void setup() {
 public void draw() 
 {
   background(0);
+  for (int i = 0; i < Ama.size(); i++) {
+    float d = dist((float)Jome.getCenterX(), (float)Jome.getCenterY(), (float)Ama.get(i).getCenterX(), (float)Ama.get(i).getCenterY());
+    if (d < 25)
+    Ama.remove(i);
+  }
   for (int i = 0; i < sky.length; i++)
   {
     sky[i].show();
   }
-  for (int k = 0; k < Ama.length; k++)
+  for (int k = 0; k < Ama.size(); k++)
   { 
-    Ama[k].move();
-    Ama[k].show();
+    Ama.get(k).move();
+    Ama.get(k).show();
   }
   Jome.move();
   Jome.show();
