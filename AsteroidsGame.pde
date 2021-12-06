@@ -1,4 +1,5 @@
 Spaceship Jome;
+ArrayList <Bullet> ammo = new ArrayList <Bullet>(); 
 ArrayList <Asteroid> Ama;
 Star[] sky = new Star[250];
 public void setup() {
@@ -24,6 +25,11 @@ public void draw()
     if (d < 25)
     Ama.remove(i);
   }
+  for (int i = 0; i < Ama.size(); i++) {
+    float d = dist((float)(ammo.get(i).getCenterX()), (float)ammo.get(i).getCenterY(), (float)Ama.get(i).getCenterX(), (float)Ama.get(i).getCenterY());
+    if (d < 20)
+    Ama.remove(i);
+  }
   for (int i = 0; i < sky.length; i++)
   {
     sky[i].show();
@@ -32,6 +38,10 @@ public void draw()
   { 
     Ama.get(k).move();
     Ama.get(k).show();
+  }
+  for (int i = 0; i < ammo.size(); i++) {
+    ammo.get(i).move();
+    ammo.get(i).show();
   }
   Jome.move();
   Jome.show();
@@ -52,5 +62,7 @@ public void keyPressed()
     Jome.setYspeed(15);
   } else if (key == 'h') {
     Jome.hyperspace();
+  } else if (key == ' ') {
+    ammo.add(new Bullet(Jome));
   }
 }
