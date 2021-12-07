@@ -3,7 +3,7 @@ class Bullet extends Floater
   public Bullet(Spaceship Jome) {
     myCenterX = Jome.getCenterX();
     myCenterY = Jome.getCenterY();
-    myXspeed = Jome. getXspeed();
+    myXspeed = Jome.getXspeed();
     myYspeed = Jome.getYspeed();
     myPointDirection = Jome.getPointDirection();
     accelerate(5);
@@ -17,20 +17,15 @@ class Bullet extends Floater
   public double getCenterY() {
     return myCenterY;
   }
-  public void move() {
-    if (myCenterX > width)
+  public void move(int i) {
+    for (i = 0; i < ammo.size(); i++)
+    if (ammo.get(i).getCenterX > width)
     {     
       ammo.remove(i);
-    } else if (myCenterX<0)
-    {     
-      myCenterX = width;
-    }    
-    if (myCenterY >height)
+    } 
+    if (ammo.get(i).getCenterY > height)
     {    
-      ammo.get(i).remove(i);
-    } else if (myCenterY < 0)
-    {     
-      myCenterY = height;
-    }
+      ammo.remove(i);
+    } 
   }
 }
