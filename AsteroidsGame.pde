@@ -25,9 +25,9 @@ public void draw()
     if (d < 25)
     Ama.remove(i);
   }
-  for (int i = 0; i < Ama.size(); i++) {
-    float d = dist((float)(ammo.get(i).getCenterX()), (float)ammo.get(i).getCenterY(), (float)Ama.get(i).getCenterX(), (float)Ama.get(i).getCenterY());
-    if (d < 20)
+  for (int i = 0; i < ammo.size(); i++) {
+    float d = dist((float)ammo.get(i).getCenterX(), (float)ammo.get(i).getCenterY(), (float)Ama.get(i).getCenterX(), (float)Ama.get(i).getCenterY());
+    if (d < 35)
     Ama.remove(i);
   }
   for (int i = 0; i < sky.length; i++)
