@@ -17,15 +17,4 @@ class Bullet extends Floater
   public double getCenterY() {
     return myCenterY;
   }
-  public void move(int i) {
-    for (i = 0; i < ammo.size(); i++)
-    if (ammo.get(i).getCenterX > width)
-    {     
-      ammo.remove(i);
-    } 
-    if (ammo.get(i).getCenterY > height)
-    {    
-      ammo.remove(i);
-    } 
-  }
 }
