@@ -62,7 +62,5 @@ public void keyPressed()
     Jome.setYspeed(15);
   } else if (key == 'h') {
     Jome.hyperspace();
-  } else if (key == ' ') {
-    ammo.add(new Bullet(Jome));
   }
 }
