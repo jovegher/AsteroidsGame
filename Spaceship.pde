@@ -30,10 +30,10 @@ class Spaceship extends Floater {
   }
   public void hyperspace()
   {
-    Jome.setXspeed(0);
-    Jome.setYspeed(0);
-    Jome.setCenterX((int)(Math.random()*400));
-    Jome.setCenterY((int)(Math.random()*400));
+    Jome.get(i).setXspeed(0);
+    Jome.get(i).setYspeed(0);
+    Jome.get(i).setCenterX((int)(Math.random()*400));
+    Jome.get(i).setCenterY((int)(Math.random()*400));
   }
   public void setXspeed(double x) {
     myXspeed = x;
