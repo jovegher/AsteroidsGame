@@ -1,4 +1,4 @@
-Spaceship Jome;
+ArrayList <Spaceship> Jome;
 ArrayList <Bullet> ammo = new ArrayList <Bullet>(); 
 ArrayList <Asteroid> Ama;
 Star[] sky = new Star[250];
@@ -7,6 +7,7 @@ public void setup() {
   background(0); 
   frameRate(60);
   Ama = new ArrayList <Asteroid>();
+  Jome = new ArrayList <Spaceship>();
   for (int i = 0; i < sky.length; i++)
   {
     sky[i] = new Star();
@@ -14,14 +15,16 @@ public void setup() {
   for (int n = 0; n < 25; n++) {
     Ama.add(new Asteroid());
   }
-  Jome = new Spaceship();
+  for (int n = 0; n < 6; n++) {
+    Jome.add(new Spaceship());
+  }
 }
 
 public void draw() 
 {
   background(0);
   for (int i = 0; i < Ama.size(); i++) {
-    float d = dist((float)Jome.getCenterX(), (float)Jome.getCenterY(), (float)Ama.get(i).getCenterX(), (float)Ama.get(i).getCenterY());
+    float d = dist((float)Jome.get(i).getCenterX(), (float)Jome.get(i).getCenterY(), (float)Ama.get(i).getCenterX(), (float)Ama.get(i).getCenterY());
     if (d < 25)
     Ama.remove(i);
   }
@@ -34,6 +37,11 @@ public void draw()
   {
     sky[i].show();
   }
+  for (int i = 0; i < Jome.size(); i++)
+  {
+    Jome.get(i).move();
+    Jome.get(i).show(); 
+  }
   for (int k = 0; k < Ama.size(); k++)
   { 
     Ama.get(k).move();
@@ -43,24 +51,22 @@ public void draw()
     ammo.get(i).move();
     ammo.get(i).show();
   }
-  Jome.move();
-  Jome.show();
 }
 
 public void keyPressed()
 {
   if (key == 'a') {
-    Jome.turn(-10);
+    Jome.get(i).turn(-10);
   } else if (key == 'd') {
-    Jome.turn(10);
+    Jome.get(i).turn(10);
   } else if (key == 'w') {
-    Jome.accelerate(2);
+    Jome.get(i).accelerate(2);
   } else if (key == 's') {
-    Jome.accelerate(-2);
+    Jome.get(i).accelerate(-2);
   } else if (key == 'f') {
-    Jome.setXspeed(15);
-    Jome.setYspeed(15);
+    Jome.get(i).setXspeed(15);
+    Jome.get(i).setYspeed(15);
   } else if (key == 'h') {
-    Jome.hyperspace();
+    Jome.get(i).hyperspace();
   }
 }
